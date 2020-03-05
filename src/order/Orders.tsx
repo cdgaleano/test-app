@@ -23,7 +23,7 @@ import moment from 'moment';
 	formatDate(orders: any){
 		 return orders.map((item:any) =>{
 			item.DateOrderFormat = moment(item.Fecha).format('L LT');
-			item.DatePreparationFormat = moment(item.Fecha).format('L LT');
+			item.DatePreparationFormat = moment(item.FechaPreparacion).format('L LT');
 			return item;
 		})
 	}
