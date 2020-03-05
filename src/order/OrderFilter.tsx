@@ -18,14 +18,16 @@ import "./styles.scss"
         };
     }
 
-    SearchOrders(): any {
+    SearchOrders(e:any): any {
+        e.preventDefault();
         const filter: IFilterOrders = {
             FullName: this.state.FullName
         };
         this.props.searchOrders(filter);
     }
 
-    ClearFilters(){
+    ClearFilters(e: any): any{
+        e.preventDefault();
         this.setState({
             FullName: ''
         });
@@ -33,6 +35,7 @@ import "./styles.scss"
     }
 
     handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
+       
         const { value, name } = e.target;
         this.setState({
             [name]: value
@@ -46,7 +49,7 @@ import "./styles.scss"
                     <Typography variant="h6" component="h6">
                         Filtros de Pedidos
                     </Typography>
-                    <form className="pedidos-filter-card" noValidate autoComplete="off">
+                    <form className="pedidos-filter-card" onSubmit={this.SearchOrders.bind(this)} noValidate autoComplete="off">
                         <Grid container spacing={1}>
                             <Grid item xs={3}>
                                 <TextField 
@@ -60,7 +63,7 @@ import "./styles.scss"
                             </Grid>
                             <Grid item xs={6}></Grid>
                             <Grid item xs={3}>
-                                <Button onClick={this.SearchOrders.bind(this)} href="#text-buttons" color="primary">
+                                <Button onClick={this.SearchOrders.bind(this)}  color="primary">
                                     Buscar 
                                 </Button>
                                 <Button onClick={this.ClearFilters.bind(this)}>

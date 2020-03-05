@@ -88,16 +88,17 @@ import moment from 'moment';
 						allowReordering={true} 
 						allowPaging={true} 
 						allowSorting={true} 
-						height={550} 
+						height={500} 
 						contextMenuItems={this.contextMenuItems}
 						ref={g=> this.grid = g } contextMenuClick={this.contextMenuClick}
 						pageSettings={this.pageOptions}>
 						<ColumnsDirective>
 						<ColumnDirective field='Id' headerText='Pedido Id' width='50' textAlign="Center"/>
-						<ColumnDirective field='FullName' headerText='Apelldo/Nombre' textAlign="Left" width='150'/>
+						<ColumnDirective field='FullName' headerText='Apelldo/Nombre' textAlign="Left" width='110'/>
+						<ColumnDirective field='Estado' headerText='Estado' textAlign="Center" width='120'/>
 						<ColumnDirective field='DateOrderFormat'  headerText='Fecha' width='100' textAlign="Center"/>
 						<ColumnDirective field='DatePreparationFormat'  headerText='Fecha Preparacion' width='100' textAlign="Center"/>
-						<ColumnDirective field='Total' headerText='Total' format="C2" width='50' textAlign="Center"/>
+						<ColumnDirective field='Total' headerText='Total' format="C2" width='60' textAlign="Center"/>
 					</ColumnsDirective>
 					<Inject services={[Page, Sort, Reorder, ContextMenu]}/>
 				</GridComponent>

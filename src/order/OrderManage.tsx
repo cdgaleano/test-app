@@ -13,7 +13,7 @@ class Orders extends React.Component<IProps, any> {
             Filter: {
                 FullName: ''
 			},
-			Orders: []
+			Orders: null
         };
 	}
 	
@@ -48,7 +48,7 @@ class Orders extends React.Component<IProps, any> {
 	render(){
 		return (
 			<>
-				{this.state.Orders.length > 0 &&
+				{this.state.Orders &&
 					<div>
 						<PedidosFilter 
 							searchOrders={this.searchOrders.bind(this)} 
