@@ -3,12 +3,10 @@ import React from 'react';
 
 class Home extends React.Component<{}, {}> {
 
-  render(){
-
-   
+  render(){   
     return (
       <>
-        <h1>Home</h1>
+        <h1>To Be Define</h1>
       </>
     )
   }

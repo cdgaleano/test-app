@@ -30,16 +30,15 @@ export default function Header() {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            size='medium'
-            aria-label="menu"
-          >
-            <ChevronLeftIcon />
+				edge="start"
+				className={classes.menuButton}
+				color="inherit"
+				size='medium'
+				aria-label="menu">
+				<ChevronLeftIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Tenders
+            	Tenders
           </Typography>
             <div>
                

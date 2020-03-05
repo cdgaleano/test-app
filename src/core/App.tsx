@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Orders from '../pedidos/Pedidos';
+import Orders from '../order/OrderManage';
 import Header from '../layout/Header';
 import Menu from '../layout/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Home from '../layout/Home';
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,

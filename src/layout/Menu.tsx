@@ -27,10 +27,10 @@ const useStyles = makeStyles(theme => ({
 			{menuData.map((item) => (
 				<Link key={item.id} to={item.page} className={classes.linkMenu}>
 					<ListItem button >
-							<ListItemIcon>
-								<i className={item.icon}></i>
-							</ListItemIcon>
-					<ListItemText primary={item.title}/>
+						<ListItemIcon>
+							<i className={item.icon}></i>
+						</ListItemIcon>
+						<ListItemText primary={item.title}/>
 					</ListItem>
 				</Link>
 			))}

@@ -8,9 +8,9 @@ export interface IFilterProps {
 }
 
 export interface IOrderListProps {
-    Orders: any
+    Orders: any,
+    shouldComponentUpdate: () => void
 }
-
 
 export interface IOrder {
     Id: number,
@@ -33,5 +33,13 @@ export interface IOrderManage {
 export interface IOrderItems {
     items: any
 }
+
+
+export interface IProps {
+	getOrders: () => void,
+	filterOrders: (FullName: string) => void, 
+	pedidos:any
+ }
+
 
 
