@@ -88,7 +88,7 @@ import moment from 'moment';
 						allowReordering={true} 
 						allowPaging={true} 
 						allowSorting={true} 
-						height={500} 
+						height={450} 
 						contextMenuItems={this.contextMenuItems}
 						ref={g=> this.grid = g } contextMenuClick={this.contextMenuClick}
 						pageSettings={this.pageOptions}>

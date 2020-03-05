@@ -26,12 +26,12 @@ const App = () => {
     <div className={classes.root}>
       <BrowserRouter>
         <Grid container spacing={3}>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
               <Menu />
           </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={10}>
                 <Switch>
-                <Route exact path="/" component={ Home }/>
+                  <Route exact path="/" component={ Home }/>
                   <Route exact path="/orders" component={ Orders }/>
                 </Switch>
             </Grid>

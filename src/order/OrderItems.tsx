@@ -4,7 +4,7 @@ import { IOrderItems } from './IOrder';
  class OrderItems extends React.Component<IOrderItems, {}>{
    
   public render() {
-    return <GridComponent dataSource={this.props.items} allowSorting={true} height={180}>
+    return <GridComponent dataSource={this.props.items} allowSorting={true} height={150}>
         <ColumnsDirective>
             <ColumnDirective field='Quantity' width='70' textAlign="Center"/>
             <ColumnDirective field='Description' width='200'/>

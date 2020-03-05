@@ -811,7 +811,7 @@ export let data: Object[] = [
         Nombre: 'Ignacio',
         Apellido: 'Piatti',
         Estado:'Despachado',
-        FechaPreparacion:'2020-03-01T00:46:57-03:00',
+        FechaPreparacion:'2020-03-01T09:46:57-03:00',
        items:[{
             Quantity:1,
             Description: 'Item 1',
@@ -971,7 +971,7 @@ export let data: Object[] = [
         Nombre: 'Ignacio',
         Apellido: 'Piatti',
         Estado:'Despachado',
-        FechaPreparacion:'2020-03-01T08:46:57-03:00',
+        FechaPreparacion:'2020-03-01T09:46:57-03:00',
        items:[{
             Quantity:1,
             Description: 'Item 1',
@@ -1091,7 +1091,7 @@ export let data: Object[] = [
         Nombre: 'Ignacio',
         Apellido: 'Piatti',
         Estado:'Despachado',
-        FechaPreparacion:'2020-03-01T010:46:57-03:00',
+        FechaPreparacion:'2020-03-01T09:46:57-03:00',
        items:[{
             Quantity:1,
             Description: 'Item 1',

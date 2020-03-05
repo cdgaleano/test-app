@@ -40,7 +40,7 @@ import moment from 'moment';
 				  Pedido # {this.props.order.Id}
 			</DialogTitle>
 			<DialogContent>
-				<h4>Informacion del Cliente</h4>
+				<h4 className="margin-none">Informacion del Cliente</h4>
 				<Grid container spacing={3}>
 					<Grid item xs={3}>
 						<TextField
