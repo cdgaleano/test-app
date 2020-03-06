@@ -38,7 +38,7 @@ export interface IOrderItems {
 export interface IProps {
 	getOrders: () => void,
 	filterOrders: (FullName: string) => void, 
-	pedidos:any
+	result:any
  }
 
 

@@ -35,7 +35,6 @@ import "./styles.scss"
     }
 
     handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
-       
         const { value, name } = e.target;
         this.setState({
             [name]: value

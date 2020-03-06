@@ -5,7 +5,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### `Modo desarrollo`  
 Primero  instalar librerias  <br />
 run yarn <br />
-depues correr el comando <br />
+
+depues situarse en la carpeta mock <br />
+cd /mock
+correr comando  para levantar con jso-server el listado de pedidos<br />
+### `json-server -p 4000 orders.json `
+
+depues levantar la app <br />
 ### `yarn start`
 App en modo desarrollo corre en <br />
 
@@ -15,6 +21,8 @@ Open [http://localhost:3000](http://localhost:3000) para verlo.
 correr yarn  
 y depues copiar carpeta Build al server
 ### `yarn build`
+
+y preparar un servidor que regrese el json de pedidos
 
 
 Los Datos los levanta del un mock

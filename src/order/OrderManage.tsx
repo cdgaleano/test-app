@@ -6,6 +6,7 @@ import PedidosFilter from './OrderFilter';
 import { IFilterOrders } from './IOrder';
 import { IProps } from './IOrder';
 import * as OrderActions from '../actions/OrdersActions';
+
 class Orders extends React.Component<IProps, any> {
 	constructor(props: IProps){
 		super(props);
@@ -17,50 +18,31 @@ class Orders extends React.Component<IProps, any> {
         };
 	}
 	
-	createFullNameToOrders() {
-		return this.props.pedidos.map( (item: any) =>{
-			item.FullName = `${item.Apellido} ${item.Nombre}`; 
-			return item;
-		} ) 
-	}
-
-	async componentDidMount(){
-		await this.props.getOrders();
-		this.setState ({
-			Orders: this.createFullNameToOrders()
-		});
+	componentDidMount(){
+		this.props.getOrders();
 	}
 
 	async searchOrders(filter: IFilterOrders) {
-		await this.props.filterOrders(filter.FullName);
-		this.setState({
-			Orders: this.props.pedidos
-		})
+		this.props.filterOrders(filter.FullName);
 	}
 
-	async clearFilterOrders() {
-		await this.props.getOrders();
-		this.setState({
-			Orders: this.props.pedidos
-		})
+	clearFilterOrders() {
+		this.props.getOrders();
 	}
 
 	render(){
 		return (
-			<>
-				{this.state.Orders &&
-					<div>
-						<PedidosFilter 
-							searchOrders={this.searchOrders.bind(this)} 
-							clearFilterOrders={this.clearFilterOrders.bind(this)}
-						/>
-						<OrderList 
-							Orders={this.state.Orders} 
-						/>
-					</div>
-				}
-				
-			</>
+			<div>
+				<PedidosFilter 
+					searchOrders={this.searchOrders.bind(this)} 
+					clearFilterOrders={this.clearFilterOrders.bind(this)}
+				/>
+				<OrderList 
+					Orders={this.props.result} 
+					{...this.props}
+				/>
+			</div>
+
 		)
 	}
 }

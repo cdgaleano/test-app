@@ -1,7 +1,8 @@
-import { SEARCH_ALL_ORDERS, FILTER_ORDERS} from '../types/ordersTypes';
+import { SEARCH_ALL_ORDERS, FILTER_ORDERS, CARGANDO, ERROR} from '../types/ordersTypes';
 
 const INITIAL_STATE: object = {
-	pedidos: []
+	result: [],
+	cargando: false
 };
 
 export default (state = INITIAL_STATE, action: { type: any; payload: any; }) => {
@@ -9,13 +10,30 @@ export default (state = INITIAL_STATE, action: { type: any; payload: any; }) => 
 		case SEARCH_ALL_ORDERS:
 			return { 
 				...state, 
-				pedidos: action.payload 
+				result: action.payload,
+				cargando: false,
+				error: null
 			}
 		case FILTER_ORDERS:
 			return { 
 				...state, 
-				pedidos: action.payload 
+				cargando: false,
+				error: null,
+				result: action.payload 
 			};
+		case CARGANDO: 
+			return {
+				...state, 
+				cargando: true,
+				error: null
+			}
+		case ERROR: 
+			return {
+				...state, 
+				error: action.payload, 
+				cargando: false
+			};
+			
 
 		default: return state;
 	};

@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject } from '@syncfusion/ej2-react-schedule';
 import { IOrderManage } from './IOrder';
-import moment from 'moment';
+import { ConverStringToDate } from '../services/DateService';
 
  class OrderSchedule extends React.Component<IOrderManage, any> {
      data: any;
@@ -16,8 +16,8 @@ import moment from 'moment';
        this.data = [{
         Id: this.props.order.Id,
         Subject: `Pedido de # ${this.props.order.Apellido} ${this.props.order.Nombre}`,
-        StartTime: moment(this.props.order.Fecha).toDate(),
-        EndTime: moment(this.props.order.FechaPreparacion).toDate()
+        StartTime: ConverStringToDate(this.props.order.Fecha),
+        EndTime: ConverStringToDate(this.props.order.FechaPreparacion)
     }];
    }
    
@@ -29,7 +29,6 @@ import moment from 'moment';
    
     return (
       <div>
-        {this.props.open && 
         <Dialog
 			open={this.props.open}
 			onClose={this.handleClose}
@@ -37,23 +36,22 @@ import moment from 'moment';
 			maxWidth = {'md'}
 			aria-labelledby="form-dialog-title">
 			<DialogTitle id="form-dialog-title">
-			  Order # {this.props.order.Id}
+				Order # {this.props.order.Id}
 			</DialogTitle>
-			<DialogContent>
-				<ScheduleComponent 
-					height='550px' 
-					selectedDate={moment(this.props.order.Fecha).toDate()} 
-					eventSettings={{ dataSource: this.data }}>
-					<Inject services={[Day, Week, WorkWeek, Month, Agenda]}/>
-				</ScheduleComponent>
-			</DialogContent>
+				<DialogContent>
+					<ScheduleComponent 
+						height='550px' 
+						selectedDate={ConverStringToDate(this.props.order.Fecha)} 
+						eventSettings={{ dataSource: this.data }}>
+						<Inject services={[Day, Week, WorkWeek, Month, Agenda]}/>
+					</ScheduleComponent>
+				</DialogContent>
 			<DialogActions>
 				<Button onClick={this.handleClose} color="primary">
 				Cerrar
 				</Button>
 			</DialogActions>
         </Dialog>
-        }
       </div>
     );
   }

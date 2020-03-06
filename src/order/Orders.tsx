@@ -5,11 +5,11 @@ import * as React from 'react';
 import { IOrderListProps } from './IOrder';
 import Order from './Order';
 import OrderSchedule from './Scheduler';
-import moment from 'moment';
+import Spinner from '../common/spinner/Spinner';
+import ErrorCustom from '../common/Error/ErrorCustom';
 
  class OrderList extends React.Component<any, any>{
 	public grid: Grid | null
-	public listOrder:[];
   	constructor(props: IOrderListProps) {
 		super(props);
 		this.state = {
@@ -17,17 +17,8 @@ import moment from 'moment';
 			openOrderSchedulerModal: false,
 		}
 		this.grid = null;
-		this.listOrder = this.formatDate(this.props.Orders);
 	}
 
-	formatDate(orders: any){
-		 return orders.map((item:any) =>{
-			item.DateOrderFormat = moment(item.Fecha).format('L LT');
-			item.DatePreparationFormat = moment(item.FechaPreparacion).format('L LT');
-			return item;
-		})
-	}
-	
 	public pageOptions: PageSettingsModel = {
 		pageSize: 20, 
 		pageSizes: true
@@ -42,7 +33,6 @@ import moment from 'moment';
 		this.executeView(args)
 		this.executeShedulerAction(args);
 	}
-
 
 	executeView(args:any) {
 		if( args.item.id === 'view'){
@@ -73,18 +63,23 @@ import moment from 'moment';
 			openOrderSchedulerModal: false
 		})
 	}
-
-	shouldComponentUpdate(nextProps: any) { 
-		this.listOrder = this.formatDate(nextProps.Orders);
-		return true
-	}
+	
 
    render() {
-	this.contextMenuClick = this.contextMenuClick.bind(this);
+
+		const { cargando, error, Orders } = this.props
+
+		if ( cargando ) {
+				return <Spinner />
+		}
+		if (error) {
+			return <ErrorCustom mensaje={error}/>
+		}
+		this.contextMenuClick = this.contextMenuClick.bind(this);
 	  return (
 			<>
 				<GridComponent  
-						dataSource={this.listOrder} 
+						dataSource={Orders} 
 						allowReordering={true} 
 						allowPaging={true} 
 						allowSorting={true} 
