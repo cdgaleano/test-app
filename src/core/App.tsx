@@ -1,48 +1,70 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { connect } from 'react-redux';
 import Orders from '../order/OrderManage';
 import Header from '../layout/Header';
 import Menu from '../layout/Menu';
-import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Home from '../layout/Home';
+import { LoginPage } from '../login/Login';
+import { RegisterPage } from '../register-page';
+import { PrivateRoute } from './private';
+import UserList from '../user/UserPage';
+import { userActions } from '../actions';
+class  App extends React.Component<any, any> {
+	
+	async componentDidMount(){
+		await this.props.getUser();
+	}
 
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-}));
+	header(){
+		if(this.props.loggedIn){
+			return (
+				<Header />
+			)
+		}
+	}
 
-const App = () => {
-  const classes = useStyles();
+	menu(){
+		if(this.props.loggedIn){
+			return (
+				<Grid item xs={2}>
+					<Menu />
+				</Grid>
+			)
+		}
+	}
+ render(){
   return (
     <>
-    <Header />
-    <div className={classes.root}>
-      <BrowserRouter>
-        <Grid container spacing={3}>
-          <Grid item xs={2}>
-              <Menu />
-          </Grid>
-            <Grid item xs={10}>
-                <Switch>
-                  <Route exact path="/" component={ Home }/>
-                  <Route exact path="/orders" component={ Orders }/>
-                </Switch>
-            </Grid>
-          </Grid>
-        </BrowserRouter>
-      </div>
-    </>
-  )
+		{this.header()}
+		<div >
+		<BrowserRouter>
+			<Grid container spacing={3}>
+				{this.menu()}
+				<Grid item xs={(this.props.loggedIn) ? 10 : 12}>
+					<Switch>
+						<Route path="/login" component={LoginPage} />
+						<Route path="/register" component={RegisterPage} />
+						<PrivateRoute exact path="/home" component={ Home }/>
+						<PrivateRoute exact path="/orders" component={ Orders }/>
+						<PrivateRoute exact path="/users" component={ UserList }/>
+					</Switch>
+				</Grid>
+			</Grid>
+			</BrowserRouter>
+		</div>
+		</>
+	  )
+  	}
+}
+const mapStateToProps = (reducers: any) => {
+    return reducers.authentication;
+};
+
+const actionCreators = {
+    getUser: userActions.getUser,
+   
 }
 
-
-
-
-export default App;
+export default connect(mapStateToProps, actionCreators)(App);

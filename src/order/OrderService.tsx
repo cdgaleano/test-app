@@ -1,4 +1,4 @@
-import { FormatDate }  from '../services/DateService';
+import { FormatDate }  from '../services/date-service';
 
 export const HandleListOrder = (list: any): any => {
     return list.map( (item: any) =>{

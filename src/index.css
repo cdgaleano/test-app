@@ -21,5 +21,13 @@ body{
 }
 
 .rojo{
-	color: red;
+	color: #FF0000;
+}
+
+.user-width{
+    width: 100%;
+}
+
+div#menu-appbar div.MuiPaper-root{
+    top: 50px !important;
 }

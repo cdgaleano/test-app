@@ -4,7 +4,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import { menuData } from './datasourceMenu';
+import { menuData } from './datasource-menu';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({

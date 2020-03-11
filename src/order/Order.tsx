@@ -9,8 +9,8 @@ import { IOrderManage } from './IOrder';
 import Grid from '@material-ui/core/Grid';
 import "./styles.scss"
 import OrderItems from './OrderItems';
-import { FormatDate }  from '../services/DateService';
-import { TextFieldCustom } from '../controls/TexFieldCustom';
+import { FormatDate }  from '../services/date-service';
+import { TextFieldCustom } from '../controls/TextFieldCustom';
 
  class Order extends React.Component<IOrderManage, any> {
 	public dateOrder: string;

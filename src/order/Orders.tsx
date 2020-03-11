@@ -6,7 +6,7 @@ import { IOrderListProps } from './IOrder';
 import Order from './Order';
 import OrderSchedule from './Scheduler';
 import Spinner from '../common/spinner/Spinner';
-import ErrorCustom from '../common/Error/ErrorCustom';
+import ErrorCustom from '../common/Error/error-custom';
 
  class OrderList extends React.Component<any, any>{
 	public grid: Grid | null

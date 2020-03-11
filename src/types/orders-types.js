@@ -1,0 +1,6 @@
+export const orderTypes = {
+    SEARCH_ALL_ORDERS: 'SEARCH_ALL_ORDERS',
+    FILTER_ORDERS: 'FILTER_ORDERS',
+    CARGANDO: 'CARGANDO',
+    ERROR: 'ERROR'
+}

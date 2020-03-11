@@ -7,7 +7,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, Inject } from '@syncfusion/ej2-react-schedule';
 import { IOrderManage } from './IOrder';
-import { ConverStringToDate } from '../services/DateService';
+import { ConverStringToDate } from '../services/date-service';
 
  class OrderSchedule extends React.Component<IOrderManage, any> {
      data: any;

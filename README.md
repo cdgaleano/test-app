@@ -8,7 +8,7 @@ run yarn <br />
 
 depues situarse en la carpeta mock <br />
 cd /mock
-correr comando  para levantar con jso-server el listado de pedidos<br />
+correr comando  para levantar con json-server el listado de pedidos<br />
 ### `json-server -p 4000 orders.json `
 
 depues levantar la app <br />

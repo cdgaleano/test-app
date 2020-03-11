@@ -8,11 +8,17 @@ import reducers from './reducers';
 import reduxThunk from 'redux-thunk';
 import "font-awesome/css/font-awesome.css";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { createLogger } from 'redux-logger';
+
+const loggerMiddleware = createLogger();
 
 const store  = createStore(
     reducers,
     {},
-    applyMiddleware(reduxThunk)
+    applyMiddleware(
+        reduxThunk,
+        loggerMiddleware
+    )
 )
 ReactDOM.render(
     <Provider store={ store }>

@@ -9,29 +9,29 @@
             id: 2,
             title: 'Filtros',
             icon: "fa fa-filter",
-            page: '/'
+            page: '/home'
         },
         {
             id: 3,
             title: 'Gestion',
             icon: "fa fa-pencil-square-o",
-            page: '/'
+            page: '/home'
         },
         {
             id: 4,
             title: 'Eliminadas',
             icon: "fa fa-trash",
-            page: '/'
+            page: '/home'
         },
         {
             id: 5,
             title: 'Destinatarios',
-            icon: "fa fa-users",
-            page: '/'
+            icon: "fa fa-user",
+            page: '/home'
         },
         {
             id: 6,
-            title: 'Alertas',
-            icon: "fa fa-bell",
-            page: '/'
+            title: 'Usuarios',
+            icon: "fa fa-users",
+            page: '/users'
         }];

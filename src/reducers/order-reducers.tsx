@@ -1,4 +1,4 @@
-import { SEARCH_ALL_ORDERS, FILTER_ORDERS, CARGANDO, ERROR} from '../types/ordersTypes';
+import { orderTypes } from '../types';
 
 const INITIAL_STATE: object = {
 	result: [],
@@ -7,27 +7,27 @@ const INITIAL_STATE: object = {
 
 export default (state = INITIAL_STATE, action: { type: any; payload: any; }) => {
 	switch (action.type) {
-		case SEARCH_ALL_ORDERS:
+		case orderTypes.SEARCH_ALL_ORDERS:
 			return { 
 				...state, 
 				result: action.payload,
 				cargando: false,
 				error: null
 			}
-		case FILTER_ORDERS:
+		case orderTypes.FILTER_ORDERS:
 			return { 
 				...state, 
 				cargando: false,
 				error: null,
 				result: action.payload 
 			};
-		case CARGANDO: 
+		case orderTypes.CARGANDO: 
 			return {
 				...state, 
 				cargando: true,
 				error: null
 			}
-		case ERROR: 
+		case orderTypes.ERROR: 
 			return {
 				...state, 
 				error: action.payload, 

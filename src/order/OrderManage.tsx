@@ -5,7 +5,7 @@ import OrderList from './Orders';
 import PedidosFilter from './OrderFilter';
 import { IFilterOrders } from './IOrder';
 import { IProps } from './IOrder';
-import * as OrderActions from '../actions/OrdersActions';
+import * as OrderActions from '../actions/order-actions';
 
 class Orders extends React.Component<IProps, any> {
 	constructor(props: IProps){
