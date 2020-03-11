@@ -57,6 +57,7 @@ class LoginPage extends React.Component<any,  any> {
                     <TextField
                         id="username"
                         name="username"
+                        autoComplete='off'
                         label="Username"
                         style ={{width: '100%'}}
                         value={username}
@@ -89,7 +90,7 @@ class LoginPage extends React.Component<any,  any> {
                         <Grid item xs>
                         </Grid>
                         <Grid item>
-                            <Link href="#" to="/register" >
+                            <Link href="#" to="/register" className="text-link" >
                                 <Button color="primary">
                                     Registrarse
                                 </Button>

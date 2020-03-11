@@ -66,6 +66,7 @@ class RegisterPage extends React.Component<any, any> {
                 <TextField
                     id="firstName"
                     name="firstName"
+                    autoComplete='off'
                     required={true}
                     label="Nombre"
                     style ={{width: '100%'}}
@@ -79,6 +80,7 @@ class RegisterPage extends React.Component<any, any> {
                     id="lastName"
                     name="lastName"
                     required={true}
+                    autoComplete='off'
                     label="Apellido"
                     style ={{width: '100%'}}
                     value={user.lastName}
@@ -89,6 +91,7 @@ class RegisterPage extends React.Component<any, any> {
                  <TextField
                     id="username"
                     name="username"
+                    autoComplete='off'
                     required={true}
                     label="Usuario"
                     style ={{width: '100%'}}
@@ -110,8 +113,8 @@ class RegisterPage extends React.Component<any, any> {
                     margin="normal"
                     />
             
-                    <Grid container>
-                    <Grid item xs={9}>
+                    <Grid container spacing={3}>
+                    <Grid item xs={8}>
                             <Button
                                 type="submit"
                                 fullWidth
@@ -122,8 +125,8 @@ class RegisterPage extends React.Component<any, any> {
                                 Registrar
                             </Button>
                         </Grid>
-                        <Grid item xs={3}>
-                            <Link href="#" to="/login" style ={{width: '100%'}} >
+                        <Grid item xs={4}>
+                            <Link href="#" to="/login" style ={{width: '100%'}} className="text-link" >
                                 <Button >Cancelar</Button>
                             </Link>
                         </Grid>

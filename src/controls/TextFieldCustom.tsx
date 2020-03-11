@@ -10,6 +10,7 @@ export const TextFieldCustom = (props: any) => {
 				id= {props.id}
 				label={props.label}
 				value={props.value}
+				autoComplete='off'
 				margin="normal"
 				style ={{width: '100%'}}
 				InputProps={{

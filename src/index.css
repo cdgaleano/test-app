@@ -31,3 +31,8 @@ body{
 div#menu-appbar div.MuiPaper-root{
     top: 50px !important;
 }
+
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
