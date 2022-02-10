@@ -22,7 +22,7 @@
     "material-design-icons": "^3.0.1",
     "material-ui-icons": "^1.0.0-beta.36",
     "moment": "^2.24.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
